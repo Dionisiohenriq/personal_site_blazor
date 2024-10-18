@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Dev\\c_sharp_projects\\personal_site_blazor\\PersonalSite\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\PersonalSite.bundle.scp.css",
+      "PackagePath": "staticwebassets\\PersonalSite.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Dev\\c_sharp_projects\\personal_site_blazor\\PersonalSite\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Dev\\c_sharp_projects\\personal_site_blazor\\PersonalSite\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Dev\\c_sharp_projects\\personal_site_blazor\\PersonalSite\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Dev\\c_sharp_projects\\personal_site_blazor\\PersonalSite\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Dev\\c_sharp_projects\\personal_site_blazor\\PersonalSite\\wwwroot\\pdf\\English - Currículum Henrique Dionisio Ferreira.pdf",
+      "PackagePath": "staticwebassets\\pdf\\English - Currículum Henrique Dionisio Ferreira.pdf"
+    },
+    {
+      "Id": "C:\\Dev\\c_sharp_projects\\personal_site_blazor\\PersonalSite\\wwwroot\\pdf\\Português - Currículum Henrique Dionisio Ferreira.pdf",
+      "PackagePath": "staticwebassets\\pdf\\Português - Currículum Henrique Dionisio Ferreira.pdf"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PersonalSite.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.PersonalSite.props",
+      "PackagePath": "build\\PersonalSite.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.PersonalSite.props",
+      "PackagePath": "buildMultiTargeting\\PersonalSite.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.PersonalSite.props",
+      "PackagePath": "buildTransitive\\PersonalSite.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

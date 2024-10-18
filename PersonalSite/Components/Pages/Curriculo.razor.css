@@ -1,0 +1,52 @@
+.custom-select-wrapper {
+	position: relative;
+	display: inline-block;
+	width: 200px;
+}
+
+.custom-select {
+	display: none;
+}
+
+.custom-select-wrapper::before {
+    content: attr(data-value);
+    display: block;
+    padding: 10px;
+    background: gray;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.custom-select-wrapper::after{
+    content: '🔻';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.custom-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: gray;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    z-index: 10;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.custom-options div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.custom-options div:hover{
+    background: black;
+}

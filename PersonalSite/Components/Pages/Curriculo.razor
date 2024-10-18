@@ -1,0 +1,82 @@
+﻿@page "/curriculo"
+@rendermode InteractiveServer
+@using PersonalSite.Models
+@inject IJSRuntime JS
+
+<PageTitle>Personal Portfolio</PageTitle>
+<div class="custom-select-wrapper" id="customSelectWrapper">
+    <select class="custom-select" id="mySelect" @onchange="languageSelector">
+        @foreach (var lng in languages)
+        {
+            <option value="@lng">@lng</option>
+        }
+    </select>
+</div>
+
+<embed src="pdf/@pdf" style="width:100%; height: 2100px;" hidden="@hideCurriculum" />
+
+@code {
+    private string pdf = string.Empty;
+    private bool hideCurriculum { get; set; } = true;
+    private List<string> languages = new List<string>() { "pt", "en" };
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+
+            await JS.InvokeVoidAsync("initializeCustomSelect", "customSelectWrapper", "mySelect");
+        }
+
+    }
+    private void languageSelector(ChangeEventArgs e)
+    {
+        var result = e.Value.ToString() switch
+        {
+            "en" => ("English - Currículum Henrique Dionisio Ferreira.pdf", false),
+            "pt" => ("Português - Currículum Henrique Dionisio Ferreira.pdf", false),
+            _ => ("Not Found", true)
+        };
+        pdf = result.Item1;
+        hideCurriculum = result.Item2;
+    }
+
+    protected override void OnInitialized()
+    {
+        pdf = "Português - Currículum Henrique Dionisio Ferreira.pdf";
+        hideCurriculum = false;
+    }
+}
+
+@* JavaScript *@
+<script>
+    window.initializeCustomSelect = function (selectWrapperId, selectId) {
+        const selectWrapper = document.getElementById(selectWrapperId);
+        const selectElement = document.getElementById(selectId);
+        const customOptions = document.createElement("div");
+        customOptions.classList.add("custom-options");
+        selectElement.querySelectorAll("option").forEach(option => {
+            const optionDiv = document.createElement("div");
+            optionDiv.textContent = option.textContent;
+            optionDiv.addEventListener("click", () => {
+                selectElement.value = option.value;
+                selectWrapper.setAttribute("data-value", option.textContent);
+                selectElement.dispatchEvent(new Event('change')); // Trigger change event
+                customOptions.style.display = "none";
+            });
+            customOptions.appendChild(optionDiv);
+        });
+
+        selectWrapper.appendChild(customOptions);
+        selectWrapper.addEventListener("click", () => {
+            const display = customOptions.style.display === "block" ? "none" : "block";
+            customOptions.style.display = display;
+       
+       770 });
+
+        document.addEventListener("click", (e) => {
+            if (!selectWrapper.contains(e.target)) {
+                customOptions.style.display = "none";
+            }
+        });
+    }
+</script>
